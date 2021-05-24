@@ -1,9 +1,8 @@
 pipeline {
-    agent { docker { image 'golang' } }
+    agent { docker { image 'continuul/build-essential' } }
     stages {
         stage('build') {
             steps {
-	        sh 'apt-get install build-essential'
                 sh 'make build'
             }
         }
