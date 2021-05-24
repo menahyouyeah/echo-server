@@ -1,9 +1,9 @@
 pipeline {
-    agent { docker { image 'continuul/build-essential' } }
+    agent { docker { image 'golang' } }
     stages {
         stage('build') {
             steps {
-                sh 'make build'
+                sh 'make docker'
             }
         }
     }
