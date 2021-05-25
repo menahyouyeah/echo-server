@@ -6,6 +6,7 @@ pipeline {
 		sh 'echo $PATH'
 		sh 'env'
 		sh 'ls -R'
+		sh 'whoami'
                 sh 'make build'  
             }
         }
