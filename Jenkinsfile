@@ -7,7 +7,7 @@ pipeline {
 		sh 'env'
 		sh 'ls -R'
 		sh 'whoami'
-                sh 'make build'  
+                sh 'XDG_CACHE_HOME=/home/minnah make build'  
             }
         }
     }
