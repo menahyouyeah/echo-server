@@ -6,7 +6,7 @@ pipeline {
 		sh 'echo $PATH'
 		sh 'env'
 		sh 'ls -R'
-                sh 'XDG_CACHE_HOME=/home/minnah make build'  
+                sh 'XDG_CACHE_HOME=/tmp/.cache make build'  
             }
         }
     }
