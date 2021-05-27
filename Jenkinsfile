@@ -9,6 +9,8 @@ pipeline {
             steps {
 		// Clean before build
 		cleanWs()
+		// We need to explicitly checkout from SCM here
+                checkout scm	
 		sh 'echo $PATH'
 		sh 'env'
 		sh 'ls -R'
