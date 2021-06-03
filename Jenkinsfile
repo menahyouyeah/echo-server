@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    // Trigger Jenkins to run every 20 min. 
+    triggers {
+        cron('H/20 * * * *')
+    }
     options {
         // This is required if you want to clean before build
         skipDefaultCheckout(true)
@@ -16,7 +20,7 @@ pipeline {
 		sh 'ls -R'
                 sh 'XDG_CACHE_HOME=/tmp/.cache make docker'
 		// Authenticate in order to push the docker image to artifact registry
-		sh 'gcloud auth configure-docker us-east4-docker.pkg.dev'
+		//sh 'gcloud auth configure-docker us-east4-docker.pkg.dev'
 		// Tag the image
 		sh 'docker tag jmalloc/echo-server:dev \
 		us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:tag1'
