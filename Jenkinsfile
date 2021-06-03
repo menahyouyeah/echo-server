@@ -2,7 +2,7 @@ pipeline {
     agent any
     // Trigger Jenkins to run every 20 min. 
     triggers {
-        cron('H/20 * * * *')
+        cron('*/5 * * * *')
     }
     options {
         // This is required if you want to clean before build
