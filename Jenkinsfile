@@ -34,6 +34,9 @@ pipeline {
 
 		// Deploy the docker image to stage
 	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server --profile=stage'
+
+		// Deploy the docker image to prod
+	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server --profile=prod'
             }
         }
     }
