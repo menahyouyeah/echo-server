@@ -2,7 +2,7 @@ pipeline {
     agent any
     // Trigger Jenkins to poll the repo every 5 minutes and build if there is a change.
     triggers {
-        pollSCM('5 * * * *')
+        pollSCM('1 * * * *')
     }
     options {
         // This is required to clean before build
