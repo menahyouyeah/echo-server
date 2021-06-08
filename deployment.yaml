@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo-server
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: echo-server
+  template:
+    metadata:
+      labels:
+        run: echo-server
+    spec:
+      containers:
+      - name: echo-server
+        image: us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server
+

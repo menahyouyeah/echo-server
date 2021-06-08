@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+metadata:
+  name: starter-project
+profiles:
+- name: prod
+  deploy:
+    kubeContext: gke_minnah-starter-project_us-central1-a_starter-project-prod
+    kubectl:
+      manifests:
+      - deployment.yaml 
+- name: stage
+  deploy:
+    kubeContext: gke_minnah-starter-project_us-central1-a_starter-project-stg
+    kubectl:
+      manifests:
+      - deployment.yaml 
