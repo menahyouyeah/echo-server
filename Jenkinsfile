@@ -21,9 +21,9 @@ pipeline {
                 sh 'XDG_CACHE_HOME=/tmp/.cache make docker'
 		// Tag the image
 		sh 'docker tag jmalloc/echo-server:dev \
-		us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:tag1'
+		us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server'
 		// Push to artifact registory
-		sh 'docker push us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:tag1'
+		sh 'docker push us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server'
             }
         }
     }
