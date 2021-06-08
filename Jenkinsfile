@@ -1,11 +1,11 @@
 pipeline {
     agent any
-    // Trigger Jenkins to run at 12:05. 
+    // Trigger Jenkins to poll the repo every 5 minutes and build if there is a change.
     triggers {
-        cron('5 12 * * *')
+        pollSCM('5 * * * *')
     }
     options {
-        // This is required if you want to clean before build
+        // This is required to clean before build
         skipDefaultCheckout(true)
     }
     stages {
