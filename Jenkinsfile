@@ -39,7 +39,7 @@ pipeline {
 	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:latest --profile=prod'
 
 		sh 'echo "hello world"'
-		sh 'echo "testing"'
+		sh 'echo "testing before demo"'
             }
         }
     }
