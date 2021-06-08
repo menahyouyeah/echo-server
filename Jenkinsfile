@@ -33,10 +33,12 @@ pipeline {
 		sh 'docker push us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server'
 
 		// Deploy the docker image to stage
-	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server --profile=stage'
+	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:latest --profile=stage'
 
 		// Deploy the docker image to prod
-	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server --profile=prod'
+	        sh 'skaffold deploy --images=us-east4-docker.pkg.dev/minnah-starter-project/starter-project/echo-server:latest --profile=prod'
+
+		sh 'echo "hello world"'
             }
         }
     }
